@@ -31,10 +31,12 @@ def get_qiita_articles():
 
     """
     articles = []
-    for i in range(1, 1001):
+    for i in range(1, 9999):
         top = get_qiita_articles_by_page(i)
         if top:
             articles.extend(top)
+        else:
+            break
     return articles
 
 
@@ -47,6 +49,11 @@ def out_put_articels(file_name):
     #     print(f'{index}. {article.get("title")} - {article.get("likes_count")} likes')
     if articles:
         df = pd.DataFrame(articles)
+        df.drop(columns=["id", "rendered_body", "body", "coediting", "comments_count", "created_at", "group", "private", "reactions_count",
+                         "stocks_count", "tags", "updated_at", "team_membership", "organization_url_name", "user", "page_views_count"], axis=1, inplace=True)
+        df.sort_values(by="likes_count", axis=0, ascending=False, inplace=True)
+        df = df[df["likes_count"] > 0]
+        df = df.reindex(columns=['title', 'url', 'likes_count'])
         df.to_csv(file_name, encoding='utf-8', index=False)
     else:
         print("文章を取得できなかった！")
