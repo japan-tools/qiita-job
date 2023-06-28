@@ -9,7 +9,7 @@ on:
 
 jobs:
   excute-python:
-    permissions: read-all|write-all
+    permissions: write-all
     runs-on: ubuntu-latest
     env:
       TZ: Asia/Tokyo
