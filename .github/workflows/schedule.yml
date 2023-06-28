@@ -6,10 +6,11 @@ on:
   push:
     branches:
       - main
+
 jobs:
   excute-python:
+    permissions: write-all
     runs-on: ubuntu-latest
-
     env:
       TZ: Asia/Tokyo
 
