@@ -47,7 +47,7 @@ def out_put_articels(file_name):
     #     print(f'{index}. {article.get("title")} - {article.get("likes_count")} likes')
     if articles:
         df = pd.DataFrame(articles)
-        df.to_csv(file_name, encoding='utf-8')
+        df.to_csv(file_name, encoding='utf-8', index=False)
     else:
         print("文章を取得できなかった！")
 
