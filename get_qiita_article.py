@@ -47,11 +47,11 @@ def out_put_articels(file_name):
     #     print(f'{index}. {article.get("title")} - {article.get("likes_count")} likes')
     if articles:
         df = pd.DataFrame(articles)
-        df.to_csv(file_name)
+        df.to_csv(file_name, encoding='utf-8')
     else:
         print("文章を取得できなかった！")
 
 
 if __name__ == '__main__':
     day = dt.now().strftime('%Y%m%d')
-    out_put_articels(f'./result_{day}.csv', encoding='utf-8')
+    out_put_articels(f'./result_{day}.csv')
