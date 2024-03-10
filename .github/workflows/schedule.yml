@@ -32,7 +32,8 @@ jobs:
           git config --local user.name "bot"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          echo $AUTHORIZATION
+          AUTHORIZATION=$AUTHORIZATION
+          printenv
           python get_qiita_article.py
           git add .
           git commit -m "update by github action"
