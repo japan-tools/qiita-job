@@ -11,6 +11,8 @@ HEADERS = {
 }
 
 
+print(os.environ.get('AUTHORIZATION'))
+
 def get_qiita_articles_by_page(page):
     '''
     第何ページ目の文章を取得
