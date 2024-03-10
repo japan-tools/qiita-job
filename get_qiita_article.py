@@ -7,11 +7,9 @@ URL = 'https://qiita.com/'
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
-    'Authorization': os.environ.get('QIITA_AUTH')
+    'Authorization': f'Bearer {os.environ.get('QIITA_AUTH')}'
 }
 
-
-print("QIITA_AUTH>>", os.environ.get('QIITA_AUTH'))
 
 def get_qiita_articles_by_page(page):
     '''
@@ -72,7 +70,6 @@ def out_put_articels(datas, file_name):
 
 def start():
     articles = get_qiita_articles()
-    print(articles)
     out_put_articels(articles, 'archive/total_result.json')
     out_put_articels(articles, 'total_result.json')
 
