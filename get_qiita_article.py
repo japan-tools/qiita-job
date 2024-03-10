@@ -37,7 +37,7 @@ def get_qiita_articles():
 
     '''
     articles = []
-    for i in range(1, 2):
+    for i in range(1, 999):
         article = get_qiita_articles_by_page(i)
         if article:
             articles.extend(article)
