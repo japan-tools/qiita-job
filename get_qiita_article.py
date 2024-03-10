@@ -11,7 +11,7 @@ HEADERS = {
 }
 
 
-print(os.environ.get('AUTHORIZATION'))
+print("AUTHORIZATION>>", os.environ.get('AUTHORIZATION'))
 
 def get_qiita_articles_by_page(page):
     '''
