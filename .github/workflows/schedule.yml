@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - main
-
 jobs:
   excute-python:
     runs-on: ubuntu-latest
@@ -27,12 +26,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: excute python
+        env:
+          AUTHORIZATION: ${{secrets.AUTHORIZATION}}
         run: |
           git config --local user.email "bot@github.com"
           git config --local user.name "bot"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          AUTHORIZATION=$AUTHORIZATION
           printenv
           python get_qiita_article.py
           git add .
