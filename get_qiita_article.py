@@ -7,11 +7,11 @@ URL = 'https://qiita.com/'
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
-    'Authorization': os.environ.get('AUTHORIZATION')
+    'Authorization': os.environ.get('QIITA_AUTH')
 }
 
 
-print("AUTHORIZATION>>", os.environ.get('AUTHORIZATION'))
+print("QIITA_AUTH>>", os.environ.get('QIITA_AUTH'))
 
 def get_qiita_articles_by_page(page):
     '''

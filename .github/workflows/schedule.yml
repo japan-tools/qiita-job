@@ -27,7 +27,7 @@ jobs:
           pip install -r requirements.txt
       - name: excute python
         env:
-          AUTHORIZATION: ${{secrets.QIITA_AUTH}}
+          QIITA_AUTH: ${{secrets.QIITA_AUTH}}
         run: |
           git config --local user.email "bot@github.com"
           git config --local user.name "bot"
