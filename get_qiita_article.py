@@ -72,6 +72,7 @@ def out_put_articels(datas, file_name):
 
 def start():
     articles = get_qiita_articles()
+    print(articles)
     out_put_articels(articles, 'archive/total_result.json')
     out_put_articels(articles, 'total_result.json')
 
