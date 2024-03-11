@@ -89,7 +89,7 @@ def start():
 
     with open('archive/total_result.json', 'r', encoding='utf-8') as f:
         articles = json.load(f)
-    body = '## はじめ\n ### この記事ではGithubActionとQiita Apiを利用して定期的に自動でQiitaの記事を取得し、いいねとストックで順位を付けて、この記事を更新する。\n ## Github Open ソース \n - https://github.com/japan-tools/qiita-tools \n ## いいね数とストック数ランキング記事一覧 \n'
+    body = '## はじめ\n ### この記事ではGithubActionとQiita Apiを利用して定期的に自動でQiitaの記事を取得し、いいねとストックで順位を付けて、この記事を更新する。\n ## Github Open ソース \n  https://github.com/japan-tools/qiita-job \n ## いいね数とストック数ランキング記事一覧 \n'
     articles = [article for article in articles if article.get(
         'likes_count') > 50 or article.get('stocks_count') > 50]
     for article in articles:
