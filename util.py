@@ -21,11 +21,11 @@ def merge_data(current_data, before_data):
         return before_data
 
 
-def sort_articles(articles, sort_name):
+def sort_articles(articles, sort_name1, sort_name2):
     '''
     ソートする
     '''
-    return sorted(articles, key=lambda x: int(x[sort_name]), reverse=False)
+    return sorted(articles, key=lambda x: (x[sort_name1], x[sort_name2]), reverse=True)
 
 
 def make_path(path):
